@@ -2,19 +2,25 @@
 #include <string>
 #include <cmath>
 using namespace std;
-
-class Silver{
-    private:
+class AbstractPoint{
+    protected:
         string name;
-        int rate;
-        int point;
+        int point = 0;
+        int ratio;
         public:
-        Silver(string n, int r = 3): name(n), rate(r), point(0){}
-        void earn(int money){
-            point += floor(money * rate / 100);
+        AbstractPoint(string name, int ratio = 1): name(name), ratio(ratio){}
+        virtual void earn(int pay) = 0;
+        virtual void show() = 0;
+        int getPoint(){return point;}
+};
+class Silver : public AbstractPoint{
+        public:
+        Silver(string name, int ratio = 3): AbstractPoint(name, ratio){}
+        void earn(int money) override{
+            point += floor(money * ratio / 100);
         }
-        void show(){
-            cout << name << "님의 현재 누적 포인트는 " << point << "점" << endl;
+        void show() override{
+            cout << name << "님의 현재 누적 포인트는 " << getPoint() << "점" << endl;
         }
 };
 int main(){
