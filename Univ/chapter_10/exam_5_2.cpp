@@ -5,6 +5,7 @@
 #include <cctype>
 using namespace std;
 
+// map 특성을 이용한 코드, 소문자 / 대문자 상관없이 결과 출력 가능하게 구현함.
 double cal_avg(const vector<string> &program)
 {
     map<string, double> grade{
@@ -35,7 +36,7 @@ int main()
         cin >> sub_;
         for (char &c : sub_)
             {
-                c = toupper(c);
+                c = toupper(c); // 대문자는 안변하고, 소문자만 대문자로 변경됨.
             }
         program.push_back(sub_);
     }
