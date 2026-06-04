@@ -145,7 +145,7 @@ int main()
             // if(createdName.insert(name).second){
             //     check++;
             // }
-            if (!duplication)
+            if (duplication == true)
                 continue;
             set.push_back(name);
             check++;
