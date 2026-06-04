@@ -77,7 +77,7 @@ int main()
     // string last_name;
     // getline(cin, last_name);
 
-    //
+    // 위 코드를 아래로 변경. // 주석 처리된 부분은 기존 코드를 가려놓거나 , 현재 단순 하드코딩 되있는 부분을 최적화해놓은 것.
     //  0 : first   1 : middle  2 : last
     // string text[3] = {"성으로 사용할 글자들 입력 >> ", "중간 이름으로 사용할 글자들 입력 >> ", "끝 이름으로 사용할 글자들 입력 >> "};
     // string name_groups[3];
@@ -124,9 +124,9 @@ int main()
         {
             if (check == numsOfName)
                 break;
-            string first = random_name(first_name_group);
-            string middle = random_name(middle_name_group);
-            string last = random_name(last_name_group);
+            string first = random_name(first_name_group); // 여기 부분은 주석처리 부분으로 치환하면 인자를 변경해줘야함.
+            string middle = random_name(middle_name_group); // 0 , 1 , 2 순서로 작성했으니, groups[0] , ... 이런식으로 하면 될 듯함.
+            string last = random_name(last_name_group); // 반복문으로 할까? 생각했지만, 각각의 문자열을 가져와서 중복처리해야 함으로, 변수를 관리가 어려워 이렇게 진행함.
             if (first == middle || first == last || middle == last)
             {
                 continue;
