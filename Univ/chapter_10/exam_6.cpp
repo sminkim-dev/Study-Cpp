@@ -13,6 +13,7 @@ using namespace std;
 // 각 벡터에서 1개씩 글자들을 랜덤으로 뽑아 , 이들을 연결하여 한 개의 이름을 완성하라.
 // 성, 중간, 끝 글자들은 동일한 글자가 입력되면 안된다.
 
+// 일부 개선 ->> exan_6_2.cpp
 vector<string> first_name_group;
 vector<string> middle_name_group;
 vector<string> last_name_group;
@@ -114,7 +115,7 @@ int main()
             break;
         // int limit = limit_check(first_name, middle_name, last_name); // limit 1456
         int limit = (first_name_group.size() * middle_name_group.size() * last_name_group.size());
-        if (numsOfName > limit)
+        if (numsOfName >= limit)
         {
             cout << "최대 생성 가능한 이름 개수는 " << limit << endl;
             continue;
