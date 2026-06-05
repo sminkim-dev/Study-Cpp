@@ -63,7 +63,7 @@ int main(){
         int create;
         cin >> create;
         if(create > value_of_limit()){
-            cout << "최대 생성 가능한 이름 개수는 " << value_of_limit() - 1 << endl;
+            cout << "최대 생성 가능한 이름 개수는 " << value_of_limit() << endl;
             continue;
         }
         int check = 0;
