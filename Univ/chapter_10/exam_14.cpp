@@ -2,6 +2,7 @@
 #include <map>
 #include <iterator>
 #include <string>
+#include <sstream>
 using namespace std;
 
 class Book;
@@ -29,12 +30,18 @@ void insert(){
     cin.get();
     string text;
     getline(cin, text);
-    int find_f = text.find(";");
-    string title = text.substr(0,find_f);
-    string other = text.substr(find_f + 1);
-    int find_s = other.find(";");
-    string writer = other.substr(0,find_s);
-    string year = other.substr(find_s + 1);
+    // int find_f = text.find(";");
+    // string title = text.substr(0,find_f);
+    // string other = text.substr(find_f + 1);
+    // int find_s = other.find(";");
+    // string writer = other.substr(0,find_s);
+    // string year = other.substr(find_s + 1);
+    string title, writer, year;
+    stringstream ss(text);
+    getline(ss, title, ';');
+    getline(ss, writer, ';');
+    getline(ss, year);
+
     bookMap.insert(make_pair(title, Book(writer, year)));
 }
 void search(){
