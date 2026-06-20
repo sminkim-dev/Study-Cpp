@@ -90,10 +90,13 @@ MyString operator+(const MyString& a, const MyString& b) {
 
 // 대소문자 구분 없이 특정 문자가 문자열에 있는지 확인
 bool containsIgnoreCase(const char* str, char ch) {
-    int target = tolower(static_cast<unsigned char>(ch));
-
+    //int target = tolower(static_cast<unsigned char>(ch));
+    int target = tolower(ch);
     for (int i = 0; str[i] != '\0'; i++) {
-        if (tolower(static_cast<unsigned char>(str[i])) == target) {
+        // if (tolower(static_cast<unsigned char>(str[i])) == target) {
+        //     return true;
+        // }
+        if(tolower(str[i]) == target){
             return true;
         }
     }
